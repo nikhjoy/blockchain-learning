@@ -23,7 +23,7 @@ class Blockchain{
     }
 
     createGenesisBlock(){
-        new Block(0, "01/01/2021", "This is the genesis block", "0");
+       return new Block(0, "01/01/2021", "This is the genesis block", "0");
     }
 
     getLatestBlock(){
@@ -38,7 +38,16 @@ class Blockchain{
 
 }
 
-    let block1 = new Block(1, "02/01/2018",{mybalance = 100});
-    let block2 = new Block(2, "03/01/2018",{mybalance = 50});
-    
+//creating 2 new blocks
+let block1 = new Block(1, "02/01/2018",{mybalance : 100});
+let block2 = new Block(2, "03/01/2018",{mybalance : 50});
+
+//create a new block chain
+let myBlockchain = new Blockchain();
+
+//adding the new blocks to the blovk chain
+myBlockchain.addBlock(block1);
+myBlockchain.addBlock(block2);
+
+console.log(JSON.stringify(myBlockchain,null,4));
 
